@@ -1,0 +1,16 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  userParams(actual: Boolean, key: String, userId: Float): [UserParamsModel!]!
+}
+
+type UserParamsModel {
+  actual: Boolean!
+  createFrom: Float!
+  id: Int!
+  key: String!
+  userId: Float!
+  value: String!
+}

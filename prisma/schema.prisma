@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int          @id @default(autoincrement())
+  yandexId   String       @unique
+  userParams UserParams[]
+}
+
+model UserParams {
+  id         Int     @id @default(autoincrement())
+  key        String
+  value      String
+  actual     Boolean @default(true)
+  createFrom Int     @default(0)
+  userId     Int
+  user       User    @relation(fields: [userId], references: [id])
+}
