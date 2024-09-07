@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 type Query {
-  userParams(actual: Boolean, key: String, userId: Float): [UserParamsModel!]!
+  userParams(actual: Boolean, key: String, reverse: Boolean, userId: Float): [UserParamsModel!]!
 }
 
 type UserParamsModel {

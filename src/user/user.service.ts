@@ -6,8 +6,15 @@ import { UserParams } from "src/types/user";
 export class UserService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async getAllParams(): Promise<UserParams[]> {
-    return this.prisma.userParams.findMany();
+  async getAllParams(isReverse?: boolean): Promise<UserParams[]> {
+    // Определяем порядок сортировки в зависимости от значения isReverse
+    const order = isReverse ? "desc" : "asc";
+
+    return this.prisma.userParams.findMany({
+      orderBy: {
+        actual: order,
+      },
+    });
   }
 
   async changeParams(

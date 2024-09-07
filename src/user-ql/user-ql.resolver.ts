@@ -10,9 +10,10 @@ export class UserGraphQlResolver {
   async findAll(
     @Args("key", { nullable: true }) key?: string,
     @Args("userId", { nullable: true }) userId?: number,
-    @Args("actual", { nullable: true }) actual?: boolean
+    @Args("actual", { nullable: true }) actual?: boolean,
+    @Args("reverse", { nullable: true }) reverse?: boolean
   ) {
-    const allParams = await this.userService.getAllParams();
+    const allParams = await this.userService.getAllParams(reverse);
 
     return allParams.filter((param) => {
       const matchesKey = key ? param.key === key : true;
