@@ -21,7 +21,10 @@ export class UserGraphQlResolver {
       const matchesUserId = userId ? param.userId === userId : true;
       const matchesActual =
         actual !== undefined ? param.actual === actual : true;
-      const matchesValue = value ? param.value === value : true;
+      const matchesValue = value
+        ? param.value.toLowerCase().includes(value.toLowerCase())
+        : true;
+
       return matchesKey && matchesUserId && matchesActual && matchesValue;
     });
   }
