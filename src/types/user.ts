@@ -11,5 +11,5 @@ export interface UserParams {
   createFrom: Number;
   userId: Number;
   createdAt: Date;
-  endActual: Date;
+  endActual: Date | null;
 }
