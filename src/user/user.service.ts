@@ -18,13 +18,13 @@ export class UserService {
   }
 
   async changeParams(
-    yandexId: string,
+    id: number,
     key: string,
     value: string
   ): Promise<UserParams> {
     const user = await this.prisma.user.findUnique({
       where: {
-        yandexId: yandexId,
+        id: id,
       },
     });
 
@@ -59,6 +59,7 @@ export class UserService {
       },
       data: {
         actual: false,
+        endActual: new Date(),
       },
     });
 

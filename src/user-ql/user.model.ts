@@ -19,4 +19,10 @@ export class UserParamsModel {
 
   @Field()
   userId: number;
+
+  @Field()
+  createdAt: Date;
+
+  @Field({ nullable: true })
+  endActual: Date | null;
 }

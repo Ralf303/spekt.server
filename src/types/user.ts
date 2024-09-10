@@ -10,4 +10,6 @@ export interface UserParams {
   actual: boolean;
   createFrom: Number;
   userId: Number;
+  createdAt: Date;
+  endActual: Date;
 }

@@ -1,8 +1,8 @@
-import { IsString } from "class-validator";
+import { IsNumber, IsString } from "class-validator";
 
 export class ChangeParamsDto {
-  @IsString()
-  yandexId: string;
+  @IsNumber()
+  id: number;
 
   @IsString()
   key: string;

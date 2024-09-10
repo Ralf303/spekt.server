@@ -8,7 +8,7 @@ export class UserController {
 
   @Post("changeParams")
   async changeParams(@Body() changeParamsDto: ChangeParamsDto) {
-    const { yandexId, key, value } = changeParamsDto;
-    return await this.userService.changeParams(yandexId, key, value);
+    const { id, key, value } = changeParamsDto;
+    return await this.userService.changeParams(id, key, value);
   }
 }
