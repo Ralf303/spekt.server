@@ -10,15 +10,18 @@ datasource db {
 model User {
   id         Int          @id @default(autoincrement())
   yandexId   String       @unique
+  createdAt  DateTime     @default(now())
   userParams UserParams[]
 }
 
 model UserParams {
-  id         Int     @id @default(autoincrement())
+  id         Int       @id @default(autoincrement())
   key        String
   value      String
-  actual     Boolean @default(true)
-  createFrom Int     @default(0)
+  actual     Boolean   @default(true)
+  createFrom Int       @default(0)
   userId     Int
-  user       User    @relation(fields: [userId], references: [id])
+  createdAt  DateTime  @default(now())
+  endActual  DateTime?
+  user       User      @relation(fields: [userId], references: [id])
 }
