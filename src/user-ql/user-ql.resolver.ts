@@ -12,7 +12,8 @@ export class UserGraphQlResolver {
     @Args("userId", { nullable: true }) userId?: number,
     @Args("actual", { nullable: true }) actual?: boolean,
     @Args("reverse", { nullable: true }) reverse?: boolean,
-    @Args("value", { nullable: true }) value?: string
+    @Args("value", { nullable: true }) value?: string,
+    @Args("subValue", { nullable: true }) subValue?: string
   ) {
     const allParams = await this.userService.getAllParams(reverse);
 
@@ -21,11 +22,18 @@ export class UserGraphQlResolver {
       const matchesUserId = userId ? param.userId === userId : true;
       const matchesActual =
         actual !== undefined ? param.actual === actual : true;
-      const matchesValue = value
-        ? param.value.toLowerCase().includes(value.toLowerCase())
+      const matchesValue = value ? param.value === value : true;
+      const matchesSubValue = subValue
+        ? param.value.toLowerCase().includes(subValue.toLowerCase())
         : true;
 
-      return matchesKey && matchesUserId && matchesActual && matchesValue;
+      return (
+        matchesKey &&
+        matchesUserId &&
+        matchesActual &&
+        matchesValue &&
+        matchesSubValue
+      );
     });
   }
 }
