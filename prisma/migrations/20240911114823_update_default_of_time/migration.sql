@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "AdminFields" ALTER COLUMN "updatedAt" SET DEFAULT CURRENT_TIMESTAMP;
