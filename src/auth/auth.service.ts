@@ -34,7 +34,7 @@ export class AuthService {
       return user;
     }
 
-    const newUser = await this.prisma.user.create({
+    const newUser: User = await this.prisma.user.create({
       data: {
         yandexId: id,
       },

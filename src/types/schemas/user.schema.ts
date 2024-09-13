@@ -1,7 +1,8 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsNumber, IsString } from "class-validator";
 
-export class ChangeParamsDto {
+//Схема для свагера
+export class UserSchema {
   @ApiProperty({
     example: 1,
   })
@@ -9,14 +10,14 @@ export class ChangeParamsDto {
   id: number;
 
   @ApiProperty({
-    example: "email",
+    example: "1153229038",
   })
   @IsString()
-  key: string;
+  yandexId: string;
 
   @ApiProperty({
-    example: "newEmail@gmail.com",
+    example: "2024-09-10T18:24:16.167Z",
   })
   @IsString()
-  value: string;
+  createdAt: Date;
 }

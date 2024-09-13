@@ -5,7 +5,7 @@ import { GraphQLModule } from "@nestjs/graphql";
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { join } from "path";
 import { UserGraphQlModule } from "./user-ql/user-ql.module";
-import { AdminFieldsModule } from "./admin-fields/admin.fields.module";
+import { AdminFieldsModule } from "./admin.fields/admin.fields.module";
 
 @Module({
   imports: [

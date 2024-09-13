@@ -1,15 +1,16 @@
 export interface User {
-  id: Number;
-  yandexId: String;
+  id: number;
+  yandexId: string;
+  createdAt: Date;
 }
 
 export interface UserParams {
-  id: Number;
-  key: String;
-  value: String;
+  id: number;
+  key: string;
+  value: string;
   actual: boolean;
-  createFrom: Number;
-  userId: Number;
+  createFrom: number;
+  userId: number;
   createdAt: Date;
   endActual: Date | null;
 }
