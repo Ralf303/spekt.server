@@ -73,5 +73,6 @@ export function transliterate(text: string): string {
     .map((char: any) => russianToLatin[char] || char)
     .join("")
     .replace(/\s+/g, "_")
-    .replace(/_{2,}/g, "_");
+    .replace(/_{2,}/g, "_")
+    .toLowerCase();
 }
