@@ -34,3 +34,11 @@ model AdminFields {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
 }
+
+model Map {
+  id   Int    @id @default(autoincrement())
+  name String
+  type String
+  lat  Float
+  lon  Float
+}

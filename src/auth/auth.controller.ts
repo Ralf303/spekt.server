@@ -1,11 +1,4 @@
-import {
-  BadRequestException,
-  Controller,
-  Get,
-  HttpStatus,
-  Patch,
-  Query,
-} from "@nestjs/common";
+import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { User } from "src/types/user";
 import { AuthTokenValidator } from "./auth.pipes";

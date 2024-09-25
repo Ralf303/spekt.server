@@ -1,13 +1,7 @@
 import { Body, Controller, HttpStatus, Post } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { ChangeParamsDto } from "./dto/changeParams.dto";
-import {
-  ApiBody,
-  ApiOperation,
-  ApiParam,
-  ApiResponse,
-  ApiTags,
-} from "@nestjs/swagger";
+import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { UserParamsSchema } from "src/types/schemas/userParams.schema";
 
 @ApiTags("Методы юзера (точнее метод для изменений параметров)")

@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "Map" (
+    "id" SERIAL NOT NULL,
+    "type" TEXT NOT NULL,
+    "lat" DOUBLE PRECISION NOT NULL,
+    "lon" DOUBLE PRECISION NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Map_pkey" PRIMARY KEY ("id")
+);

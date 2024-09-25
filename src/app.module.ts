@@ -6,6 +6,7 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { join } from "path";
 import { UserGraphQlModule } from "./user-ql/user-ql.module";
 import { AdminFieldsModule } from "./admin.fields/admin.fields.module";
+import { MapModule } from './map/map.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AdminFieldsModule } from "./admin.fields/admin.fields.module";
     }),
     UserGraphQlModule,
     AdminFieldsModule,
+    MapModule,
   ],
 })
 export class AppModule {}
