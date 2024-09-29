@@ -11,10 +11,11 @@ export class AdminFieldsService {
     description: string,
     type: string
   ): Promise<adminField> {
-    const translitName = transliterate(name);
+    const translit = transliterate(name);
     const adminField: adminField = await this.prisma.adminFields.create({
       data: {
-        name: translitName,
+        name,
+        translit,
         description,
         type,
       },
@@ -35,11 +36,10 @@ export class AdminFieldsService {
     description: string,
     type: string
   ): Promise<adminField> {
-    const translitName = transliterate(name);
     const adminField: adminField = await this.prisma.adminFields.update({
       where: { id },
       data: {
-        name: translitName,
+        name,
         description,
         type,
         updatedAt: new Date(),

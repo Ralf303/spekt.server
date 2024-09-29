@@ -31,10 +31,16 @@ export class CreateAdminFieldResponseSchema {
   id: number;
 
   @ApiProperty({
-    example: "Zavod",
+    example: "Завод",
   })
   @IsString()
   name: string;
+
+  @ApiProperty({
+    example: "Zavod",
+  })
+  @IsString()
+  translit: string;
 
   @ApiProperty({
     example: "Находится на площади восстания",
@@ -95,10 +101,16 @@ export class UpdateAdminFieldResponseSchema {
   id: number;
 
   @ApiProperty({
-    example: "Predpriyatie",
+    example: "Предприятие",
   })
   @IsString()
   name: string;
+
+  @ApiProperty({
+    example: "Predpriyatie",
+  })
+  @IsString()
+  translit: string;
 
   @ApiProperty({
     example: "Находится на площади восстания",
@@ -112,12 +124,3 @@ export class UpdateAdminFieldResponseSchema {
   @IsString()
   type: string;
 }
-// interface adminField {
-//   id: number;
-//   name: string;
-//   value: string;
-//   description: string;
-//   type: string;
-//   createdAt: Date;
-//   updatedAt: Date;
-// }
