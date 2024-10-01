@@ -36,10 +36,12 @@ export class AdminFieldsService {
     description: string,
     type: string
   ): Promise<adminField> {
+    const translit = transliterate(name);
     const adminField: adminField = await this.prisma.adminFields.update({
       where: { id },
       data: {
         name,
+        translit,
         description,
         type,
         updatedAt: new Date(),
