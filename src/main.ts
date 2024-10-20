@@ -4,12 +4,17 @@ import { ValidationPipe } from "@nestjs/common";
 import { AppModule } from "./app.module";
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    cors: {
+      origin: "*", // Это разрешит запросы от любого источника. Можно указать конкретные источники вместо '*'.
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    },
+  });
 
-  app.setGlobalPrefix("api"); //Глобальный превикс /api, вызов любого метода только через /api
-  app.useGlobalPipes(new ValidationPipe()); //Подключен валидатор
+  app.setGlobalPrefix("api"); // Глобальный префикс /api, вызов любого метода только через /api.
+  app.useGlobalPipes(new ValidationPipe()); // Подключен валидатор.
 
-  //Авто сборка свагера
+  // Авто сборка свагера.
   const config = new DocumentBuilder()
     .setTitle("Спектр API")
     .setDescription("Полное API на русском")
@@ -22,4 +27,5 @@ async function bootstrap() {
   await app.listen(3002);
   console.log("Server is running on port 3002");
 }
+
 bootstrap();
